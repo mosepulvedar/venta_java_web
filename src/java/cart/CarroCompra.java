@@ -32,7 +32,7 @@ public class CarroCompra {
     
     public Producto buscar(int codigo) {
         for (Producto producto : productos) {
-            if(producto.getCodigo() == codigo) {
+            if(producto.getId()== codigo) {
                 return producto;
             }
         }

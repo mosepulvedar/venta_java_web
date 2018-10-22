@@ -17,9 +17,9 @@ public class ProductoDAO {
     ArrayList<Producto> productos = new ArrayList<Producto>();
 
     public ProductoDAO() {
-        productos.add(new Producto(1, "ropa", 20000));
-        productos.add(new Producto(2, "anagesico", 35000));
-        productos.add(new Producto(3, "pañales", 234234));
+        productos.add(new Producto(1, "ropa", 20000,20));
+        productos.add(new Producto(2, "anagesico", 35000,1));
+        productos.add(new Producto(3, "pañales", 234234,2));
     }
     
     public ArrayList<Producto> listar() {
@@ -28,7 +28,7 @@ public class ProductoDAO {
     
     public Producto buscar(int codigo) {
         for (Producto producto : productos) {
-            if(producto.getCodigo() == codigo) {
+            if(producto.getId()== codigo) {
                 return producto;
             }
         }
