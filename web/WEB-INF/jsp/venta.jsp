@@ -26,7 +26,7 @@
             <select name="cboProducto" required="" class="form-control">
                 <option value="">Seleccionar</option>
                 <c:forEach items="${productos}" var="p">
-                    <option value="${p.getCodigo()}">${p.getNombre()}</option>
+                    <option value="${p.getId()}">${p.getNombre()}</option>
                 </c:forEach>
                 <input class="form-control" placeholder="Cantidad" type="number" name="txtCantidad" required>
                 <input type="submit" value="Agregar" class="btn btn-secondary">
@@ -47,13 +47,13 @@
             </tr>
             <c:forEach var="pro" items="${sessionScope.carro.getProductos()}">
                 <tr>
-                    <td>${pro.getCodigo()}</td>
+                    <td>${pro.getId()}</td>
                     <td>${pro.getNombre()}</td>
                     <td>${pro.getPrecio()}</td>
                     <td>${pro.getCantidad()}</td>
-                    <td>${pro.total()}</td>
+                    <td>0</td>
                     <td>
-                        <a href="remove?codigo=${pro.getCodigo()}">Eliminar</a>
+                        <a href="remove?codigo=${pro.getId()}">Eliminar</a>
                     </td>
                 </tr>
             </c:forEach>

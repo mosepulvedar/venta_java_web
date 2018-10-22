@@ -9,6 +9,7 @@ import DAO.ProductoDAO;
 import cart.CarroCompra;
 import entity.Producto;
 import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,16 +48,8 @@ public class VentaController {
     public String venta(Model model, HttpServletRequest req) {
         
         ProductoDAO productoDAO = new ProductoDAO();
-        
-        ArrayList<Producto> productos = new ArrayList<Producto>();
-        if(req.getSession().getAttribute("carro")!=null) {
-            CarroCompra carro = (CarroCompra)req.getSession().getAttribute("carro");
-            productos = carro.getProductos();
-        }
-        ArrayList<Producto> productoBd = productoDAO.listar();
-            
-        
-        model.addAttribute("productos", productoBd);
+           
+        model.addAttribute("productos", productoDAO.listar());
         return "venta";
         
     }

@@ -63,7 +63,7 @@ public class Producto implements Serializable {
     }
     
     
-    
+    @javax.persistence.Transient
     private int cantidad;
 
     public int getCantidad() {
